@@ -179,24 +179,9 @@ The tilde (\texttt{\textasciitilde}) creates a non-breaking space to prevent lin
 
 \subsection{Citing Sources}
 
-Citing is used to reference external literature and sources.
+Citing is used to reference external literature and sources. \autocite{example}
 
-\subsubsection{Using Bib\TeX}
-
-Include a bibliography:
-
-\begin{verbatim}
-\bibliography{references}
-\bibliographystyle{plain}
-\end{verbatim}
-
-Cite sources in the text:
-
-\begin{verbatim}
-\cite{key}
-\end{verbatim}
-
-\subsubsection{Using biblatex (Recommended)}
+\subsubsection{Using biblatex}
 
 A more flexible modern approach:
 
@@ -205,16 +190,32 @@ A more flexible modern approach:
 \addbibresource{references.bib}
 \end{verbatim}
 
-Citing:
+Cite sources in the text:
 
 \begin{verbatim}
-\cite{key}
+\autocite{key}
 \end{verbatim}
 
 Print the bibliography:
 
 \begin{verbatim}
 \printbibliography
+\end{verbatim}
+
+Or alternatively:
+
+\begin{verbatim}
+\printbibheading
+\printbibliography[
+  nottype=online,
+  heading=subbibliography,
+  title={Printed sources}
+]
+\printbibliography[
+  type=online,
+  heading=subbibliography,
+  title={Online sources}
+]
 \end{verbatim}
 
 \subsection{Example Bibliography Entry}
