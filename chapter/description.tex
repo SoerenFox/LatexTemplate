@@ -1,0 +1,229 @@
+\chapter{Description}
+
+\section{Figures}
+
+\subsection{Basic Example}
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=\textwidth]{figures/image}
+    \rule{6cm}{6cm}
+    \caption{Example Figure}
+    \label{fig:error_function}
+\end{figure}
+
+Following shows the code to the basic example for including a Figure. The line that includes the actual is due to a lack of one outcommented and replaced by a black box.
+
+\begin{verbatim}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=\textwidth]{figures/image}
+    \rule{6cm}{6cm}
+    \caption{Example Figure}
+\label{fig:error_function}
+\end{figure}
+
+\end{verbatim}
+
+\subsection{Required Packages}
+
+
+\begin{verbatim}
+\usepackage{graphicx}   % To include images
+\usepackage{float}      % strict placement control using \texttt{[H]}
+\end{verbatim}
+
+\subsection{Scaling and Sizing}
+
+You can control image size using:
+
+\begin{verbatim}
+\includegraphics[width=0.5\textwidth]{figures/image}
+\includegraphics[height=5cm]{figures/image}
+\end{verbatim}
+
+\section{Tables}
+
+\subsection{Basic Example}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+Left & Center & Right \\ \hline
+A & B & C \\ \hline
+\end{tabular}
+\caption{Basic Table Example}
+\label{tab:basic}
+\end{table}
+
+The following shows the corresponding code:
+
+\begin{verbatim}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+Left & Center & Right \\ \hline
+A & B & C \\ \hline
+\end{tabular}
+\caption{Basic Table Example}
+\label{tab:basic}
+\end{table}
+\end{verbatim}
+
+\subsection{Required Packages}
+
+\begin{verbatim}
+\usepackage{float}     % Enables [H] placement
+\usepackage{makecell}  % Allows line breaks inside cells
+\usepackage{graphicx}  % Required for \resizebox
+\end{verbatim}
+
+\subsection{Column Alignment}
+
+The \texttt{tabular} column specification defines alignment:
+
+\begin{center}
+\begin{tabular}{ll}
+\texttt{l} & Left-aligned\\
+\texttt{c} & Centered\\
+\texttt{r} & Right-aligned\\
+\texttt{|} & Vertical line\\
+\end{tabular}
+\end{center}
+
+Example:
+\begin{verbatim}
+\begin{tabular}{|l|c|r|}
+\end{verbatim}
+
+\subsection{Scaling and Width Control}
+
+Wide tables can be scaled using:
+
+\begin{verbatim}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{...}
+...
+\end{tabular}
+}
+\end{verbatim}
+
+This forces the table to fit the page width.
+
+\subsection{Line Breaks in Cells}
+
+To include line breaks inside cells:
+
+\begin{verbatim}
+\makecell[l]{Line 1 \\ Line 2}
+\end{verbatim}
+
+This requires the \texttt{makecell} package.
+
+\subsection{Large / Complex Table Example}
+
+\begin{table}[H]
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    \textbf{Source} & \textbf{Summary} & \textbf{Link to Source} & \textbf{Priority} & \textbf{Target Date} & \textbf{Status} \\ \hline
+    Codebeamer & Summary in Tool, name in JSON & https://Codebeamer.azure.zf-world.com/item/\{itemID\} & priority & endDate & status \\ \hline
+    MS Planner & Title & \makecell[l]{
+    https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner\\
+    /mytasks?tenantId=eb70b763-b6d7-4486-8555-8831709a784e\&webUrl=https\%3A\\
+    \%2F\%2Ftasks.teams.microsoft.com\%2Fteamsui\%2FpersonalApp\%2Falltaskli\\
+    sts\&context=\{"subEntityId":"/v1/plan/\{planId\}/view/board/task/{id}"\}\\ \\ (replace \{planId\}, \{id\} with body.value.planId and body.value.id)} & priority & dueTime & percent-Complete \\ \hline
+    Windchill & \makecell[l]{In Item-Field with \\ \texttt{Name} = \texttt{Summary}; summary stands \\ in \texttt{Item-Field.short-text.value}} & \makecell[l]{https://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\} \\ integrity://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\}} & ALM\_Priority & CompletionDate & State \\ \hline
+  \end{tabular}}
+  \caption{Example for big table}
+  \label{tab:bigTable}
+\end{table}
+
+\section{Float Placement Options for Figures and Tables}
+
+Figures and Tables are floats, and their placement is controlled by optional parameters:
+
+\begin{center}
+\begin{tabular}{ll}
+\texttt{h} & Place approximately here \\
+\texttt{t} & Top of page \\
+\texttt{b} & Bottom of page \\
+\texttt{p} & Separate float page \\
+\texttt{!} & Override internal constraints \\
+\texttt{H} & Place exactly here (requires \texttt{float} package) \\
+\end{tabular}
+\end{center}
+
+Example:
+\begin{verbatim}
+\begin{figure}[!htb]
+\end{figure}
+
+\begin{table}[!htb]
+\end{table}
+\end{verbatim}
+\section{Referencing and Correct Citing}
+
+\subsection{Referencing Figures and Tables}
+
+\begin{verbatim}
+As shown in Figure~\ref{fig:error_function}.
+As listed in Table~\ref{tab:basic}.
+See Section~\ref{sec:tables}.
+\end{verbatim}
+
+The tilde (\texttt{\textasciitilde}) creates a non-breaking space to prevent line breaks between the word and the reference number. Ensure that corresponding labels are defined.
+
+\subsection{Citing Sources}
+
+Citing is used to reference external literature and sources.
+
+\subsubsection{Using Bib\TeX}
+
+Include a bibliography:
+
+\begin{verbatim}
+\bibliography{references}
+\bibliographystyle{plain}
+\end{verbatim}
+
+Cite sources in the text:
+
+\begin{verbatim}
+\cite{key}
+\end{verbatim}
+
+\subsubsection{Using biblatex (Recommended)}
+
+A more flexible modern approach:
+
+\begin{verbatim}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+\end{verbatim}
+
+Citing:
+
+\begin{verbatim}
+\cite{key}
+\end{verbatim}
+
+Print the bibliography:
+
+\begin{verbatim}
+\printbibliography
+\end{verbatim}
+
+\subsection{Example Bibliography Entry}
+
+\begin{verbatim}
+@article{example,
+    author  = {Author, A.},
+    title   = {Example Title},
+    journal = {Journal Name},
+    year    = {2024}
+}
+\end{verbatim}

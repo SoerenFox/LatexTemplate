@@ -1,0 +1,67 @@
+\documentclass[
+    fontsize=12pt,
+    paper=a4,
+    twoside=false,
+    listof=totoc,
+    bibliography=totoc,
+    titlepage,
+    headsepline,
+    DIV=18,
+    BCOR=12mm,
+    cleardoublepage=empty,
+    parskip
+]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=nyt
+]{biblatex}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+
+\newcommand{\titel}{Ein längerer Titel sieht gegebenenfalls um einiges besser aus}
+\newcommand{\autor}{Sören Fox (1348302)}
+\newcommand{\institut}{DHBW Ravensburg\\Campus Friedrichshafen}
+\newcommand{\datum}{\today}
+
+\usepackage[
+    hidelinks,
+    pdftitle={\titel},
+    pdfauthor={\autor}
+]{hyperref}
+
+\addbibresource{literature/literature.bib}
+
+\begin{document}
+
+\include{pages/cover}
+
+\tableofcontents
+
+\include{chapter/introduction}
+\include{chapter/description}
+
+\printbibheading
+\printbibliography[nottype=online,heading=subbibliography,title={Gedruckte Quellen}]
+\printbibliography[type=online,heading=subbibliography,title={Online-Quellen}]
+
+\listoffigures
+
+\listoftables
+
+\appendix
+
+\include{chapter/appendix}
+
+\end{document}
