@@ -30,10 +30,20 @@
 \usepackage{xcolor}
 \usepackage{pdfpages}
 
-\newcommand{\titel}{Ein längerer Titel sieht gegebenenfalls um einiges besser aus}
-\newcommand{\autor}{Sören Fox (1348302)}
+\newcommand{\unternehmen}{ZF Friedrichshafen AG}
+\newcommand{\studiengang}{Embedded Systems - Automotive Engineering}
 \newcommand{\institut}{DHBW Ravensburg\\Campus Friedrichshafen}
+
+\newcommand{\titel}{Ein längerer Titel sieht unter Umständen um einiges besser aus}
+\newcommand{\autor}{Sören Fox}
 \newcommand{\datum}{\today}
+
+\newcommand{\studienarbeit}{Projektarbeit T4\_2000}
+\newcommand{\matrikelnummer}{Mtr.-Nummer}
+\newcommand{\kurs}{TSA24}
+\newcommand{\betreuer}{Betreuer}
+\newcommand{\gutachter}{Gutachter}
+\newcommand{\bearbeitungszeitraum}{30. März bis 07. September 2026}
 
 \usepackage[
     hidelinks,
@@ -47,7 +57,16 @@
 
 \include{pages/cover}
 
+\pagenumbering{roman}
+
+\include{pages/restriction}
+\include{pages/declaration}
+\include{chapter/abstract}
+
 \tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
 
 \include{chapter/introduction}
 \include{chapter/description}
