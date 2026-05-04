@@ -26,15 +26,19 @@ This serves a general Latex template to easily start into whatever formal work n
 ├── appendix
 │   └── .gitkeep
 ├── chapter
+│   ├── abstract.tex
 │   ├── appendix.tex
 │   ├── description.tex
 │   └── introduction.tex
 ├── figures
-│   └── .gitkeep
+│   ├── DHBW-Logo.svg.png
+│   └── ZF logo STD Blue_RGB_for_digital_use.png
 ├── literature
 │   └── literature.bib
 ├── pages
-│   └── cover.tex
+│   ├── cover.tex
+│   ├── declaration.tex
+│   └── restriction.tex
 ├── Scripts
 │   └── update-structure.ps1
 ├── .gitignore
@@ -90,5 +94,6 @@ Submission deadline: **[...]**
 
 This repository contains academic work created for university purposes.
 See the [LICENSE](LICENSE) file for details.
+
 
 
