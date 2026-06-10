@@ -30,6 +30,10 @@
 \usepackage{xcolor}
 \usepackage{pdfpages}
 
+\usepackage[toc, acronym]{glossaries}
+\makeglossaries
+\input{pages/acronyms.tex}
+
 \newcommand{\titel}{Ein längerer Titel sieht gegebenenfalls um einiges besser aus}
 \newcommand{\autor}{Sören Fox (1348302)}
 \newcommand{\institut}{DHBW Ravensburg\\Campus Friedrichshafen}
@@ -57,11 +61,10 @@
 \printbibliography[type=online,heading=subbibliography,title={Online-Quellen}]
 
 \listoffigures
-
 \listoftables
+\printglossaries
 
 \appendix
-
 \include{chapter/appendix}
 
 \end{document}
