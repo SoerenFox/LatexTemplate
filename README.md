@@ -36,6 +36,7 @@ This serves a general Latex template to easily start into whatever formal work n
 ├── literature
 │   └── literature.bib
 ├── pages
+│   ├── acronyms.tex
 │   ├── cover.tex
 │   ├── declaration.tex
 │   └── restriction.tex
@@ -94,6 +95,3 @@ Submission deadline: **[...]**
 
 This repository contains academic work created for university purposes.
 See the [LICENSE](LICENSE) file for details.
-
-
-

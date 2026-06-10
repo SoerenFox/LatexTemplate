@@ -33,6 +33,10 @@
 \usepackage{array}
 \usepackage{enumitem}
 
+\usepackage[toc, acronym]{glossaries}
+\makeglossaries
+\input{pages/acronyms.tex}
+
 \newcommand{\unternehmen}{ZF Friedrichshafen AG}
 \newcommand{\studiengang}{Embedded Systems - Automotive Engineering}
 \newcommand{\institut}{DHBW Ravensburg\\Campus Friedrichshafen}
@@ -79,11 +83,10 @@
 \printbibliography[type=online,heading=subbibliography,title={Online-Quellen}]
 
 \listoffigures
-
 \listoftables
+\printglossaries
 
 \appendix
-
 \include{chapter/appendix}
 
 \end{document}

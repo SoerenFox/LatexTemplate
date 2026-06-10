@@ -125,21 +125,21 @@ This requires the \texttt{makecell} package.
 \subsection{Large / Complex Table Example}
 
 \begin{table}[H]
-  \centering
-  \resizebox{\textwidth}{!}{
-  \begin{tabular}{|l|l|l|l|l|l|}
-    \hline
-    \textbf{Source} & \textbf{Summary} & \textbf{Link to Source} & \textbf{Priority} & \textbf{Target Date} & \textbf{Status} \\ \hline
-    Codebeamer & Summary in Tool, name in JSON & https://Codebeamer.azure.zf-world.com/item/\{itemID\} & priority & endDate & status \\ \hline
-    MS Planner & Title & \makecell[l]{
-    https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner\\
-    /mytasks?tenantId=eb70b763-b6d7-4486-8555-8831709a784e\&webUrl=https\%3A\\
-    \%2F\%2Ftasks.teams.microsoft.com\%2Fteamsui\%2FpersonalApp\%2Falltaskli\\
-    sts\&context=\{"subEntityId":"/v1/plan/\{planId\}/view/board/task/{id}"\}\\ \\ (replace \{planId\}, \{id\} with body.value.planId and body.value.id)} & priority & dueTime & percent-Complete \\ \hline
-    Windchill & \makecell[l]{In Item-Field with \\ \texttt{Name} = \texttt{Summary}; summary stands \\ in \texttt{Item-Field.short-text.value}} & \makecell[l]{https://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\} \\ integrity://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\}} & ALM\_Priority & CompletionDate & State \\ \hline
-  \end{tabular}}
-  \caption{Example for big table}
-  \label{tab:bigTable}
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        \textbf{Source} & \textbf{Summary} & \textbf{Link to Source} & \textbf{Priority} & \textbf{Target Date} & \textbf{Status} \\ \hline
+        Codebeamer & Summary in Tool, name in JSON & https://Codebeamer.azure.zf-world.com/item/\{itemID\} & priority & endDate & status \\ \hline
+        MS Planner & Title & \makecell[l]{
+        https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner\\
+        /mytasks?tenantId=eb70b763-b6d7-4486-8555-8831709a784e\&webUrl=https\%3A\\
+        \%2F\%2Ftasks.teams.microsoft.com\%2Fteamsui\%2FpersonalApp\%2Falltaskli\\
+        sts\&context=\{"subEntityId":"/v1/plan/\{planId\}/view/board/task/{id}"\}\\ \\ (replace \{planId\}, \{id\} with body.value.planId and body.value.id)} & priority & dueTime & percent-Complete \\ \hline
+        Windchill & \makecell[l]{In Item-Field with \\ \texttt{Name} = \texttt{Summary}; summary stands \\ in \texttt{Item-Field.short-text.value}} & \makecell[l]{https://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\} \\ integrity://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\}} & ALM\_Priority & CompletionDate & State \\ \hline
+    \end{tabular}}
+    \caption{Example for big table}
+    \label{tab:bigTable}
 \end{table}
 
 \section{Float Placement Options for Figures and Tables}
@@ -207,14 +207,14 @@ Or alternatively:
 \begin{verbatim}
 \printbibheading
 \printbibliography[
-  nottype=online,
-  heading=subbibliography,
-  title={Printed sources}
+    nottype=online,
+    heading=subbibliography,
+    title={Printed sources}
 ]
 \printbibliography[
-  type=online,
-  heading=subbibliography,
-  title={Online sources}
+    type=online,
+    heading=subbibliography,
+    title={Online sources}
 ]
 \end{verbatim}
 
@@ -228,3 +228,36 @@ Or alternatively:
     year    = {2024}
 }
 \end{verbatim}
+
+\section{Acronyms and Glossaries}
+
+Acronyms and glossary entries, such as \gls{ki} or \gls{cpu}, can be referenced in the text using the \texttt{gls} command:
+
+\begin{verbatim}
+\gls{cpu}
+\end{verbatim}
+
+Typically, acronyms and glossary entries are defined in a separate file (e.g., \texttt{acronyms.tex}), which is included in the main document using:
+
+\begin{verbatim}
+\include{acronyms}
+\end{verbatim}
+
+In this file, entries are defined as follows:
+
+\begin{verbatim}
+\newacronym{ki}{KI}{Künstliche Intelligenz}
+
+\newglossaryentry{cpu}{
+  name={CPU},
+  description={Central Processing Unit}
+}
+\end{verbatim}
+
+The glossary and acronym list can then be generated using:
+
+\begin{verbatim}
+\printglossaries
+\end{verbatim}
+
+When an acronym is used for the first time, the full term is automatically printed, followed by the acronym in parentheses. Subsequent uses will display only the acronym.
