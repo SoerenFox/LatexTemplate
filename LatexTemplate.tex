@@ -19,7 +19,7 @@
 \usepackage{csquotes}
 \usepackage[
     backend=biber,
-    style=numeric,
+    style=ieee,
     sorting=nyt
 ]{biblatex}
 
@@ -78,10 +78,7 @@
 \include{chapter/introduction}
 \include{chapter/description}
 
-\printbibheading
-\printbibliography[nottype=online,heading=subbibliography,title={Gedruckte Quellen}]
-\printbibliography[type=online,heading=subbibliography,title={Online-Quellen}]
-
+\printbibliography
 \listoffigures
 \listoftables
 \printglossaries

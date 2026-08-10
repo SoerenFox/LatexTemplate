@@ -47,28 +47,28 @@ You can control image size using:
 \subsection{Basic Example}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|c|r|}
-\hline
-Left & Center & Right \\ \hline
-A & B & C \\ \hline
-\end{tabular}
-\caption{Basic Table Example}
-\label{tab:basic}
+    \centering
+    \caption{Basic Table Example}
+    \label{tab:basic}
+    \begin{tabular}{|l|c|r|}
+        \hline
+        Left & Center & Right \\ \hline
+        A & B & C \\ \hline
+    \end{tabular}
 \end{table}
 
 The following shows the corresponding code:
 
 \begin{verbatim}
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|c|r|}
-\hline
-Left & Center & Right \\ \hline
-A & B & C \\ \hline
-\end{tabular}
-\caption{Basic Table Example}
-\label{tab:basic}
+    \centering
+    \caption{Basic Table Example}
+    \label{tab:basic}
+    \begin{tabular}{|l|c|r|}
+        \hline
+        Left & Center & Right \\ \hline
+        A & B & C \\ \hline
+    \end{tabular}
 \end{table}
 \end{verbatim}
 
@@ -126,6 +126,8 @@ This requires the \texttt{makecell} package.
 
 \begin{table}[H]
     \centering
+    \caption{Example for big table}
+    \label{tab:bigTable}
     \resizebox{\textwidth}{!}{
     \begin{tabular}{|l|l|l|l|l|l|}
         \hline
@@ -138,8 +140,6 @@ This requires the \texttt{makecell} package.
         sts\&context=\{"subEntityId":"/v1/plan/\{planId\}/view/board/task/{id}"\}\\ \\ (replace \{planId\}, \{id\} with body.value.planId and body.value.id)} & priority & dueTime & percent-Complete \\ \hline
         Windchill & \makecell[l]{In Item-Field with \\ \texttt{Name} = \texttt{Summary}; summary stands \\ in \texttt{Item-Field.short-text.value}} & \makecell[l]{https://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\} \\ integrity://skobde-mks-im.kobde.trw.com:7001/im/viewissue?selection=\{itemID\}} & ALM\_Priority & CompletionDate & State \\ \hline
     \end{tabular}}
-    \caption{Example for big table}
-    \label{tab:bigTable}
 \end{table}
 
 \section{Float Placement Options for Figures and Tables}
@@ -261,3 +261,22 @@ The glossary and acronym list can then be generated using:
 \end{verbatim}
 
 When an acronym is used for the first time, the full term is automatically printed, followed by the acronym in parentheses. Subsequent uses will display only the acronym.
+
+\section{To Add}
+
+\begin{itemize}
+    \item long tables
+    \item create plots from cvs data
+    \item pictures with tikz
+    \item equations
+    \item Code
+\end{itemize}
+
+\section{Planned Changes}
+
+\begin{itemize}
+    \item Examples shall be removed from 'description'
+    \item 'description' shall be renamed to 'foundations'
+    \item new 'description' shall be added
+    \item new 'description' shall contain a collection of examples out of previous works
+\end{itemize}
