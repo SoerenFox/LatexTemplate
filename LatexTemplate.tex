@@ -18,9 +18,9 @@
 
 \usepackage{csquotes}
 \usepackage[
-  backend=biber,
-  style=numeric,
-  sorting=nyt
+    backend=biber,
+    style=ieee,
+    sorting=nyt
 ]{biblatex}
 
 \usepackage{float}
@@ -56,10 +56,7 @@
 \include{chapter/introduction}
 \include{chapter/description}
 
-\printbibheading
-\printbibliography[nottype=online,heading=subbibliography,title={Gedruckte Quellen}]
-\printbibliography[type=online,heading=subbibliography,title={Online-Quellen}]
-
+\printbibliography
 \listoffigures
 \listoftables
 \printglossaries
