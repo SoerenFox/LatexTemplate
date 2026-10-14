@@ -15,6 +15,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage{seqsplit}
 
 \usepackage{csquotes}
 \usepackage[
@@ -32,25 +33,72 @@
 \usepackage{pdfpages}
 \usepackage{array}
 \usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xltabular}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 \usepackage[toc, acronym]{glossaries}
 \makeglossaries
 \input{pages/acronyms.tex}
+
+\usepackage{tikz}
+\usetikzlibrary{
+    positioning,
+    fit,
+    backgrounds,
+    calc,
+    matrix,
+    arrows.meta
+}
+\tikzset{
+    component/.style={
+        draw,
+        rounded corners,
+        fill=white,
+        minimum width=5cm,
+        minimum height=1cm,
+        align=center,
+        font=\small
+    }
+}
 
 \newcommand{\unternehmen}{ZF Friedrichshafen AG}
 \newcommand{\studiengang}{Embedded Systems - Automotive Engineering}
 \newcommand{\institut}{DHBW Ravensburg\\Campus Friedrichshafen}
 
 \newcommand{\titel}{Ein längerer Titel sieht unter Umständen um einiges besser aus}
-\newcommand{\autor}{Sören Fox}
+\newcommand{\autor}{Till Winter, Patrick Pöhner, Baris Aykut\\und Sören Fox}
 \newcommand{\datum}{\today}
 
-\newcommand{\studienarbeit}{Projektarbeit T4\_2000}
+\newcommand{\studienarbeit}{Projektarbeit T4\_3101}
 \newcommand{\matrikelnummer}{Mtr.-Nummer}
 \newcommand{\kurs}{TSA24}
-\newcommand{\betreuer}{Betreuer}
-\newcommand{\gutachter}{Gutachter}
+\newcommand{\betreuer}{Prof. Dr. Thomas Dietmüller}
+\newcommand{\gutachter}{\betreuer}
 \newcommand{\bearbeitungszeitraum}{30. März bis 07. September 2026}
+
+\definecolor{modelblue}{RGB}{220,235,250}
+\definecolor{realgreen}{RGB}{220,240,220}
+\definecolor{simorange}{RGB}{245,225,200}
+\definecolor{softpurple}{RGB}{230,225,245}
+
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    frame=single,
+    showstringspaces=false,
+    columns=fullflexible
+}
 
 \usepackage[
     hidelinks,
